@@ -1,0 +1,108 @@
+
+{% extends 'oldage/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+<title>Add</title>
+<!-- Custom Theme files -->
+<link href="{% static 'oldage/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Flat Registration Form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--Google Fonts-->
+<style>
+    .login input[type="text"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    
+    }
+    .login input[type="date"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }  
+    .login select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }
+     .navbar-right {
+    /* padding-right: 30px; */
+    padding-left: 37px;
+    }
+       .navbar-right {
+    /* padding-right: 30px; */
+    padding-left: 47px;
+}
+  .agileits_w3layouts_banner_nav {
+     
+    margin: -50px auto;
+  }
+  #h1{
+      padding-top: 80px;
+  }
+    
+</style>
+</head>
+<body>
+	<h1 id="h1">New Members!! Register Here!!!</h1>
+<div class="login">
+		<h2>Add Members</h2>
+                <div class="lock"> <img src="{% static 'images/lock.png' %}" alt="" title=""/> </div>
+		
+		<span class="line"> </span>
+                <form action="" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <!-- <input type="text" placeholder="Member Id" name="id" />-->
+                   <input type="text" placeholder="Full Name" name="name" required=""/>
+                 
+                    <br>
+                    <br>
+                    Gender:
+                   
+                    <select name="gender" required="">
+			<option value="" disabled selected>---Select---</Option>
+                               <option value="male">Male</option>
+                               <option value="female">Female</option>
+                               <option value="others">Other</option>
+                            </select>
+                    <br>
+                    <br>
+                    Date of Birth: 
+                    <input type="date" placeholder="Date of Birth" name="dob" required=""/>
+                    <input type="text" placeholder="Address" name="address" required=""/>
+                    <input type="text" placeholder="District" name="district" required=""/>
+		 
+                    <input type="text" placeholder="State" name="state" required=""/>
+                    <input type="text" placeholder="Pincode" name="pincode" required=""/>
+                    <input type="text"  name="phone" required maxlength="10" placeholder="Phone Number" >
+               <!--     <input type="text" placeholder="Phone Number" name="phone" required=""/>-->
+                         <input type="text" placeholder="AccountNumber" name="account" required=""/>
+                    <input type="text" placeholder="Bank Details" name="bank" required=""/>
+                    <br>
+                        <br>
+                <input type="file" name="image" id="fileToUpload" accept=".jpeg,.jpg,.png" >
+                <br>
+                <br>
+                <center>
+                <input type="submit" name="submit" value="Add">
+                </center>
+                
+   
+                     
+		
+                </form>
+</div>	
+</body>
+</html>
+
+{% endblock %}

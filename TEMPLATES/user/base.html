@@ -1,0 +1,119 @@
+{% load static %}
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="zxx">
+<head>
+<title>User</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Handout Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--// Meta tag Keywords -->
+<!-- css files -->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" /> <!-- Bootstrap-Core-CSS -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" /> <!-- Style-CSS --> 
+<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}"> <!-- Font-Awesome-Icons-CSS -->
+<link href="{% static 'css/pogo-slider.min.css' %}" rel="stylesheet" type="text/css" media="all" /> <!-- Banner-Slider-CSS -->
+<link href="{% static 'css/nav.css" rel="stylesheet" type="text/css" media="all" /> <!-- Nav-CSS -->
+<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" type="text/css" media="all"/> <!-- Owl-Carousel-CSS -->
+<link href="{% static 'css/lsb.css' %}" rel="stylesheet" type="text/css"> <!-- gallery-css -->
+
+<!-- //css files -->
+<!-- online-fonts -->
+<link href="//fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic,latin-ext,vietnamese" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+<!-- //online-fonts -->
+<!-- js files -->
+<script src="js/modernizr.js"></script>
+
+<!-- /js files -->
+<style>
+
+   .navbar-inverse {
+    background-color: #000000;
+    border-color: #351c1c;
+}
+
+.nav{
+    font-size: 20px;
+    padding-left: 52px;
+}
+.navbar-inverse .navbar-nav > li > a {
+   color: #fd93b0;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.scroll>a:hover{
+    color: #fd93b0;
+}
+.navbar-default {
+    
+    background-color: #008080;
+    padding-top: 30px;
+       border-color: #92585800;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #f5f5f5;
+        padding-top: 0px;
+    
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color:  #ffe109;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-brand {
+    color: #fffefe;
+    /* padding-bottom: 31px; */
+    padding-top: 2px;
+    letter-spacing: 2px;
+}
+#reviewAction{
+    background-color: #34f05d;
+}
+
+</style>
+</head>
+<body>
+    <div class="agile-banner w3lshome" id="home">
+		<div class="navbar navbar-default navbar-fixed-top w3ls-navbar">
+			<div class= "container brand1">
+				<a href="#" class="navbar-brand w3-logo">USER</a>
+				
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<!-- navbar collapse -->
+				<div class="collapse navbar-collapse navHeaderCollapse">
+					<ul class="nav navbar-nav navbar-right w3ls-nav">
+                                            <li><a class="scroll index " href="/user/">HOME</a></li>
+                                                <!-- <li><a class="scroll soc" href="/administrator/view_orphanage/">APPROVE</a></li> -->
+                                                <!-- <li><a class="scroll soc" href="/administrator/view_oldage/">APPROVE</a></li> -->
+                                                <li><a class="scroll soc" href="/user/societies/">Socities</a></li>
+                                                <li><a class="scroll adopt" href="/user/adoption/">Adoption</a></li>
+                                                <li><a class="scroll spon" href="/user/sponsorship/">Sponsorship</a></li>
+                                                <li><a class="scroll wed " href="/user/wedding/">Wedding</a></li>
+                                                <li><a class="scroll pur" href="/user/purchase/">Purchase</a></li>
+                                                <li><a class="scroll pur" href="/user/viewaddjob/">Add Job</a></li>
+                                                <li><a href="/signout/"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+                                                
+                                                
+						
+					</ul>
+        
+</div>
+</div>
+</div>
+<!-- <img src="{% static 'images/home.jpg' %}" width="100%" height="100%"> -->
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
+
+

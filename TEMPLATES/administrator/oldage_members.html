@@ -1,0 +1,76 @@
+{% extends 'administrator/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <style>
+        table{
+        width:100%;
+        }
+caption{
+            color:  #009688;
+            font-size: 25px;
+                padding-bottom: 28px;
+                    padding-top: 104px;
+                    text-align: center;
+        }
+        
+        table{
+            text-align: center;
+        }
+        td,th{
+            text-align: center;
+            height: 40px;
+        }
+        img{
+            height: 80px;
+            width: 80px;
+        }
+     </style>   
+    </head>
+    <body>
+<form method="post" enctype="multipart/form-data">
+
+   <table align="center" border="5">
+         <caption>Member Details</caption>
+    <tr>
+        <th>Name</th>
+         <th>Gender</th>
+         <th>Date Of Birth</th>   
+         <th>Address</th>
+         <th>District</th>
+         <th>State</th>
+          <th>Pincode</th>
+          <th>Phone</th>
+           <th>Account</th>
+           <th>Bank Details</th>
+           <th>Image</th>
+                
+    </tr>
+    {% for i in data %}
+    <tr>
+    <th>{{i.name}}</th>
+    <th>{{i.gender}}</th>
+    <th>{{i.dob}}</th>
+    <th>{{i.address}}</th>
+    <th>{{i.district}}</th>
+    <th>{{i.state}}</th>
+    <th>{{i.pincode}}</th>
+    <th>{{i.phone}}</th>
+    <th>{{i.account}}</th>
+    <th>{{i.bank}}</th>
+    <th><img src="{{i.image.url}}"></th>
+    
+    </tr>
+    {% endfor %}
+
+<!-- <td><img src=" " alt =" " width='60px' height='60px'></td>
+</tr> -->
+
+</table>
+</form>
+            
+    </body>
+</html>
+
+{% endblock %}

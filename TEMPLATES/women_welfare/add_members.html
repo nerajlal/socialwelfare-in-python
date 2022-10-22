@@ -1,0 +1,133 @@
+{% extends 'women_welfare/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+<title>Add Members</title>
+<!-- Custom Theme files -->
+<link href="{% static 'donate/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Flat Registration Form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--Google Fonts-->
+<style>
+    .login input[type="text"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    
+    }
+    .login input[type="date"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }  
+    .login select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }
+    .navbar-right {
+    /* padding-right: 30px; */
+    padding-left: 37px;
+    }
+       .navbar-right {
+    /* padding-right: 30px; */
+    padding-left: 47px;
+}
+  .agileits_w3layouts_banner_nav {
+     
+    margin: -50px auto;
+  }
+  #h1{
+      padding-top: 80px;
+  }
+  .navbar-default .navbar-nav>.wview>a,
+.navbar-default .navbar-nav>.wview>a:hover,
+.navbar-default .navbar-nav>.wview>a:focus {
+    color: #FFC107;
+    background: none;
+}
+
+.navbar-default .navbar-nav>.wview>a:before {
+    background: #FFC107;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+}  
+    
+</style>
+</head>
+<body>
+	<h1 id="h1">New Members!! Register Here!!!</h1>
+<div class="login">
+		<h2>Add Members</h2>
+                <div class="lock"> <img src="{% static 'images/lock.png' %}" alt="" title=""/> </div>
+		
+		<span class="line"> </span>
+                <form action="/women/add_members/" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                   <!--<input type="text" placeholder="Member Id" name="id" />-->
+                   <input type="text" placeholder="Full Name" name="name" required=""/>
+                 
+                    <br>
+                    <br>
+       
+                    Date of Birth: 
+                    <input type="date" placeholder="Date of Birth" name="dob" required=""/>
+                    <br>
+                    <br>
+                    Gender
+                     <select name="gender" required="">
+			<option value="" disabled selected>---Select---</Option>
+                              
+                               <option value="Female">Female</option>
+                                
+                            </select><br><br>
+                    
+                            Marriage status
+                            <select name="status1" required="">
+                   <option value="" disabled selected>---Select---</Option>
+                                     
+                                      <option value="married">Married</option>
+                                      <option value="single">Single</option>
+                                       
+                                   </select>
+                    <br>
+                    <input type="text" placeholder="Address" name="address" required=""/>
+                    <br>
+                    <input type="text" placeholder="District" name="district" required=""/>
+                    <br>
+                    <input type="text" placeholder="State" name="state" required=""/>
+                    <br>
+                    <input type="text" placeholder="Pincode" name="pincode" required=""/>
+                    <br>
+                    <input type="text" placeholder="phone" name="phone" required=""/>
+                    <br>
+                      
+                    
+                   
+                         <input type="text" placeholder="Account Number" name="account" required=""/>
+                    <input type="text" placeholder="Bank Details" name="bank" required=""/>
+                    <br>
+                        <br>
+                <input type="file" name="image" id="fileToUpload" accept=".jpeg,.jpg,.png" >
+                <br>
+                <br>
+                <center>
+                    <input type="submit" name="submit" value="Add"></center>
+ 
+                </form>
+</div>	
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'women_welfare/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <style>
+        table{
+        width:100%;
+           text-align: center;
+        }
+caption{
+            color:  #009688;
+            font-size: 25px;
+                padding-bottom: 28px;
+                    padding-top: 104px;
+                    text-align: center;
+        }
+        td,th{
+            height: 40px;
+            text-align: center;
+        }
+        img{
+            width: 80px;
+            height: 80px;
+        }
+ 
+   .navbar-default .navbar-nav>.wprop>a,
+.navbar-default .navbar-nav>.wprop>a:hover,
+.navbar-default .navbar-nav>.wprop>a:focus {
+    color: #FFC107;
+    background: none;
+}.navbar-default .navbar-nav>.wprop>a:focus {
+
+
+.navbar-default .navbar-nav>.wprop>a:before {
+    background: #FFC107;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+}
+
+     </style>   
+    </head>
+    <body>
+<form method="post" enctype="multipart/form-data">
+
+   <table align="center" border="5">
+         <caption>Proposals</caption>
+    <tr>
+
+        <th>Name</th>
+               <th>DOB</th>    
+                   <th>Occupation</th>      
+         <th>Address</th>
+         <th>District</th>
+         <th>State</th>
+                <th>Phone</th>
+                <th>Image</th>
+    <th>women name</th>
+    </tr>
+
+    {% for i in data %}
+    <tr>
+   
+        <td>{{i.name}}</td>
+        <td>{{i.dob}}</td>
+        <td>{{i.occupation}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.district}}</td>
+        <td>{{i.state}}</td>
+        <td>{{i.phone}}</td>
+        <td><img src="{{i.image.url}}" alt=""></td>
+        <td>{{i.women}}</td>
+
+    </tr>
+    {% endfor %}
+
+
+   </table>
+</form>
+       
+            
+    </body>
+</html>
+{% endblock %}

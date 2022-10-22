@@ -1,0 +1,175 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'web/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'web/css/font-awesome.css' %}">
+<link rel="stylesheet" href="{% static 'web/css/flexslider.css' %}" type="text/css" media="screen" /> <!-- Testimonials js-->
+<link rel="stylesheet" href="{% static 'web/css/lightbox.css' %}">  
+<link rel="stylesheet" href="{% static 'web/css/style.css' %}">
+
+	<!-- google fonts -->
+        <link href="{% static 'web/fonts.googleapis.com/css?family=Open+Sans' %}" rel="stylesheet">
+        <link href="{% static 'web/fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,700i,800,900' %}" rel="stylesheet">  
+	  	<!-- scripts -->
+                <script src="{% static 'web/js/jquery.min.js' %}"></script>
+	<!-- google fonts -->
+        
+	  	<!-- scripts -->
+                <script src="{% static 'web/js/jquery.min.js' %}"></script>
+<!-- /js files -->
+<style>
+
+.navbar-right {
+    float: left!important;
+}
+
+.navbar-inverse .navbar-nav > .adopt > a, .navbar-inverse .navbar-nav > .adopt> a:hover, .navbar-inverse .navbar-nav > .adopt > a:focus {
+    color: #101010f5;
+    background-color: #8ad49a;
+}
+.nav{
+    font-size: 20px;
+    padding-left: 46px;
+}
+.navbar-inverse .navbar-nav > li > a {
+   color: #fd93b0;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.scroll>a:hover{
+    color: #fd93b0;
+}
+.navbar-default {
+    
+    background-color: #008080;
+    padding-top: 30px;
+       border-color: #92585800;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #f5f5f5;
+        padding-top: 0px;
+    
+}
+.navbar-default > li > a:hover, .navbar-default > li > a:focus, .navbar-default li a.adopt{
+    color: #ffe109 !important;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color:  #ffe109;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-brand {
+    color: #fffefe;
+    /* padding-bottom: 31px; */
+    padding-top: 2px;
+    letter-spacing: 2px;
+}
+.gallery-grids img {
+    width: 100%;
+   height:351px;
+}
+.w3ls-hover .view-caption span {
+    
+    margin-top: 2%;
+    }
+.w3ls-hover:hover .view-caption {
+    background-color: #0080808c;
+}
+.w3ls-hover .view-caption h5 {
+ 
+    font-size: 1.2em;
+}
+div#gallery {
+   padding-top: 125px;
+    padding-top:40px;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background: #FFF;
+    font-family: 'Dosis', sans-serif;
+}
+.navbar-nav>li>a {
+   
+    font-size: 20px;
+    letter-spacing: normal;
+    text-transform: none;
+        padding: 10px 15px;
+}
+#head{
+        padding-top: 143px;
+}
+#h3{
+    text-align: center;
+    color: #008080;
+}
+
+</style>
+</head>
+<body>
+
+    
+        <!-- gallery -->
+	<div id="gallery" class="gallery"> 
+          
+		<div class="gallery-w3lsrow">
+                    <div class="col-sm-6 col-xs-6 gallery-grids">
+					<div id="head">
+        <h3 id="h3" style="padding-bottom: 34px;">Select child from Orphanage to adopt!!</h3>
+    </div>
+						<div class="w3ls-hover">
+                                    <a href="/user/adoption_members/">
+                                        <img src="{% static 'images/f7.jpg' %}" class="img-responsive zoom-img" alt=""/>
+						<div class="view-caption">
+							<h5>ORPHANGE</h5>
+							<span class="fa fa-snowflake-o" aria-hidden="true"></span>
+						</div>
+					</a>
+				</div>
+					</div>
+			<div class="col-sm-6 col-xs-6 gallery-grids">
+			<div id="head">
+        <h3 id="h3" style="padding-bottom: 34px;">We happy to inform that from our site this much adoption & marriage have done.</h3>
+    </div>
+				<div class="w3ls-hover">
+                                    <a href="adoption.php">
+                                       
+					</a>
+				</div>
+			</div>
+                   
+			
+			
+			
+			
+						<div class="clearfix"> </div> 
+		</div>
+		
+		
+            
+		<!--  light box js -->
+                <script src="{% static 'web/js/lightbox-plus-jquery.min.js' %}"> </script> 
+		<!-- //light box js--> 
+	</div>  
+                      <div class="footer">
+	<div class="container">
+		<!-- Social-icons -->
+		
+		<!-- //Social-icons -->
+	
+		<!-- copyright -->
+		<div class="w3agile_footer_copy">
+			<p>Social Welfare. All rights reserved </p>
+		</div>
+		<!-- //copyright -->
+		<!-- newsletter -->
+		
+			<div class="clearfix"> </div>
+			<!-- //newsletter -->
+		</div>
+	</div>
+
+
+{% endblock %}

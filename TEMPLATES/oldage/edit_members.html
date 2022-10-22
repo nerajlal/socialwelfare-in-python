@@ -1,0 +1,118 @@
+{% extends 'oldage/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+<title>Oldage Edit</title>
+<!-- Custom Theme files -->
+<link href="{%  static 'oldage/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Flat Registration Form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--Google Fonts-->
+<style>
+    .login input[type="text"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }
+    .login input[type="date"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }  
+    .login select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }
+            .navbar-right {
+    /* padding-right: 30px; */
+    padding-left: 47px;
+}
+  .agileits_w3layouts_banner_nav {
+     
+    margin: -50px auto;
+  }
+  #h1{
+      padding-top: 80px;
+  }	 
+</style>
+</head>
+<body>
+
+    <h1 id="h1">Update your data!!</h1>	
+<div class="login">
+  {% for i in data %}
+		<h2>Update Details</h2>
+                <div class="lock"> <img src="{% static 'images/lock.png' %}" alt="" title=""/> </div>
+		
+		<span class="line"> </span>
+                <form action="/oldage/edit_members/{{i.pk}}/" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+
+                  
+               
+                    Member Id
+                    <br>
+                   <input type="text" placeholder="Member Id" name="id" value="{{i.id}}" />
+                   <br>
+                   Full Name
+                   <br>
+                   <input type="text" placeholder="Full Name" name="name" value="{{i.name}}"/>
+                 
+                    <br>
+                    <br>
+                    Gender:
+                   
+                    <select name="gender" required="">
+			
+                                <option>{{i.gender}}</option>
+                               <option value="male">Male</option>
+                               <option value="female">Female</option>
+                               <option value="others">Other</option>
+                            </select>
+                    <br>
+                    <br>
+                    Date of Birth: 
+                    <input type="date"  name="dob"  required="" value="{{i.dob}}" />
+                    <!-- <input type="date" id="start" name="dob"
+       value="{{i.dob}}"
+       min="2018-01-01" max="2018-12-31"> -->
+                    <br>
+                    
+                    <input type="text" placeholder="Address" name="address" value="{{i.address}}"/><br>
+                    <input type="text" placeholder="District" name="district" value="{{i.district}}"/>
+		 
+                    <input type="text" placeholder="State" name="state" value="{{i.state}}"/>
+                    <input type="text" placeholder="Pincode" name="pincode" value="{{i.pincode}}"/>
+                    <input type="text" placeholder="Phone Number" name="phone" value="{{i.phone}}"/>
+                         <input type="text" placeholder="AccountNumber" name="account" value="{{i.account}}">
+                    <input type="text" placeholder="Bank Details" name="bank" value="{{i.bank}}"/>
+                    <br>
+                        <br>
+                        <input type="file" name="image" id="image" /><img src="{{ i.image.url }}" width="150" height="150" ></td>
+
+                <br>
+                <br>
+                
+                <input type="submit" name="submit" value="Update">
+                <!-- <input type="button" value="Back" class="homebutton" id="btnHome">  -->
+              
+                    
+                    {% endfor %}
+		
+                </form>
+                 
+</div>	
+</body>
+</html>
+
+{% endblock %}

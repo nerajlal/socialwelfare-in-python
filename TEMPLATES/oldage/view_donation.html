@@ -1,0 +1,90 @@
+
+{% extends 'oldage/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <style>
+        table{
+        width:100%;
+        }
+        h3{
+            padding-top: 100px;
+            text-align: center;
+            color:  #009688;
+        }
+        h5{
+            padding-top: 30px;
+             color:  #009688;
+        }
+
+        td,th{
+            text-align: center;
+            height: 40px;
+        }
+        
+        table{
+            text-align: center;
+            margin-top: 30px;
+        }
+ .navbar-default .navbar-nav>.odon>a,
+.navbar-default .navbar-nav>.odon>a:hover,
+.navbar-default .navbar-nav>.odon>a:focus {
+    color: #FFC107;
+    background: none;
+}
+
+.navbar-default .navbar-nav>.odon>a:before {
+    background: #FFC107;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+}
+img{
+    height: 60px;
+    width: 60px;
+}
+     </style>   
+    </head>
+    <body>
+           <h3>Donations</h3>
+         <h5>If Received The Donation,Then Verify That By Clicking The Not Recieved Button</h5>
+<form method="post" enctype="multipart/form-data">
+
+   <table align="center" border="5">
+      
+    <tr>
+
+        <th>Name</th>
+         <th>Address</th>
+         <th>District</th>
+         <th>State</th>
+         <th>Phone</th>
+         <th>Amount</th>  
+         <th>Recieved or not</th>  
+    </tr>
+    {% for i in data %}
+    <tr>
+        
+    <td>{{i.name}}</td>
+    <td>{{i.address}}</td>
+    <td>{{i.district}}</td>
+    <td>{{i.state}}</td>
+    <td>{{i.phone}}</td>
+    <td>{{i.amount}}</td>
+    {% if i.receive == "Received" %}
+        <td>Received</td>
+        {% else %}
+    <td><a href="/oldage/receive/{{i.pk}}/">Not Received</a></td>
+        {% endif %}
+    </tr>
+        {% endfor %}
+   </table>
+</form>
+      
+    </body>
+</html>
+
+{% endblock %}

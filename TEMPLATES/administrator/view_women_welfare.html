@@ -1,0 +1,124 @@
+
+{% extends 'administrator/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        
+
+        <meta name="description" content="ProUI is a Responsive Bootstrap Admin Template created by pixelcave and published on Themeforest.">
+        <meta name="author" content="pixelcave">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+
+        <!-- Icons -->
+        <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+        <link rel="shortcut icon" href="{% static 'other/img/favicon.png' %}">
+        <link rel="apple-touch-icon" href="{% static 'other/img/icon57.png' %}" sizes="57x57">
+        <link rel="apple-touch-icon" href="{% static 'other/img/icon72.png' %}" sizes="72x72">
+        <link rel="apple-touch-icon" href="{% static 'other/img/icon76.png' %}" sizes="76x76">
+        <link rel="apple-touch-icon" href="{% static 'other/img/icon114.png' %}" sizes="114x114">
+        <link rel="apple-touch-icon" href="{% static 'other/img/icon120.png' %}" sizes="120x120">
+        <link rel="apple-touch-icon" href="{% static 'other/img/icon144.png' %}" sizes="144x144">
+        <link rel="apple-touch-icon" href="{% static 'other/img/icon152.png' %}" sizes="152x152">
+        <link rel="apple-touch-icon" href="{% static 'other/img/icon180.png' %}" sizes="180x180">
+        <!-- END Icons -->
+
+        <!-- Stylesheets -->
+        <!-- Bootstrap is included in its original form, unaltered -->
+        <link rel="stylesheet" href="{% static 'other/css/bootstrap.min.css' %}">
+
+        <!-- Related styles of various icon packs and plugins -->
+        <link rel="stylesheet" href="{% static 'other/css/plugins.css' %}">
+
+        <!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
+        <link rel="stylesheet" href="{% static 'other/css/main.css' %}">
+
+        <!-- Include a specific file here from css/themes/ folder to alter the default theme of the template -->
+
+        <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
+        <link rel="stylesheet" href="{% static 'other/css/themes.css' %}">
+        <!-- END Stylesheets -->
+
+        <!-- Modernizr (browser feature detection library) -->
+        <script src="{% static 'other/js/vendor/modernizr.min.js' %}"></script>
+    </head>
+    <body>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+                        <!-- Datatables Content -->
+                        <div class="block full">
+                            
+                            <div class="table-responsive">
+                                <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Category</th>
+                                            <th class="text-center"><i class="gi gi-user">Society</i></th>
+                                            <th>Manager</th>
+                                            <th>Address</th>
+                                            <th>State</th>
+                                            <th>Pincode</th>
+                                            <th>Phone</th>
+                                            <th>Account</th>
+                                            <th>Bank Details</th>
+                                            <th class="text-center"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            
+                                            {% for i in data %}
+                                            <td class="text-center">{{i.category}}</td>
+                                            <!-- <td><a href="/administrator/doctor_details/{{i.pk}}">View</a></td> -->
+                                            <td>{{i.society}}</td>
+                                            <td>{{i.manager}}</td>
+                                            <td>{{i.address}} {{i.district}}</td>
+                                            <td>{{i.state}}</td>
+                                            <td>{{i.pincode}}</td>
+                                            <td>{{i.phone}}</td>
+                                            <td>{{i.account}}</td>
+                                            <td>{{i.bank}}</td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <a href="/administrator/active_women_welfare/{{i.pk}}" onclick="return confirm('Do you Want to Approve?')" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-success"><i class="fa fa-check"></i></a>
+                                                    <a href="/administrator/remove_women_welfare/{{i.pk}}" onclick="return confirm('Do you Want to Remove?')" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                            {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- END Datatables Content -->
+                    </div>
+                    <!-- END Page Content -->
+
+                  
+
+        
+        <script src="{% static 'other/js/vendor/jquery.min.js' %}"></script>
+        <script src="{% static 'other/js/vendor/bootstrap.min.js' %}"></script>
+        <script src="{% static 'other/js/plugins.js' %}"></script>
+        <script src="{% static 'other/js/app.js' %}"></script>
+
+        <!-- Load and execute javascript code used only in this page -->
+        <script src="{% static 'other/js/pages/tablesDatatables.js' %}"></script>
+        <script>$(function(){ TablesDatatables.init(); });</script>
+    </body>
+</html>
+
+{% endblock %}
+

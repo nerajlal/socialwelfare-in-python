@@ -1,0 +1,83 @@
+{% extends 'administrator/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <style>
+        table{
+        width:100%;
+        }
+caption{
+    text-align: center;
+            color:  #009688;
+            font-size: 25px;
+                padding-bottom: 28px;
+                    padding-top: 104px;
+        }
+        td,th{
+            text-align: center;
+            height: 50px;
+        }
+        table{
+            text-align: center;
+        }
+     </style>   
+    </head>
+    <body>
+<form method="post" enctype="multipart/form-data">
+
+   <table align="center" border="5">
+         <caption>Donations</caption>
+    <tr  style="font-weight: bold;">
+<th>Name</th>
+<th>Address</th>
+<th>District</th>
+<th>State</th>
+<th>Phone</th>
+<th>Amount</th>
+<th>Society</th>
+<th>Recieved or Not</th>
+    </tr>
+    {% for i in data %}
+   <tr>
+       <td>{{i.name}}</td>
+       <td>{{i.address}}</td>
+       <td>{{i.district}}</td>
+       <td>{{i.state}}</td>
+       <td>{{i.phone}}</td>
+       <td>{{i.amount}}</td>
+       <td>{{i.society}}</td>
+       <td>{{i.receive}}</td>
+   </tr>
+   {% endfor %}
+
+   {% for i in data1 %}
+   <tr>
+       <td>{{i.name}}</td>
+       <td>{{i.address}}</td>
+       <td>{{i.district}}</td>
+       <td>{{i.state}}</td>
+       <td>{{i.phone}}</td>
+       <td>{{i.amount}}</td>
+       <td>{{i.society}}</td>
+       <td>{{i.receive}}</td>
+   </tr>
+   {% endfor %}
+   {% for i in data2 %}
+   <tr>
+    <td>{{i.name}}</td>
+    <td>{{i.address}}</td>
+    <td>{{i.district}}</td>
+    <td>{{i.state}}</td>
+    <td>{{i.phone}}</td>
+    <td>{{i.amount}}</td>
+    <td>{{i.society}}</td>
+    <td>{{i.receive}}</td>
+   </tr>
+   {% endfor %}
+   </table>
+</form>       
+    </body>
+</html>
+
+{% endblock %}

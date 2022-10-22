@@ -1,0 +1,104 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block content %}
+
+<html>
+    <head>
+        <style>
+        table{
+        width:100%;
+        }
+   .navbar-inverse .navbar-nav > .wed > a, .navbar-inverse .navbar-nav > .wed > a:hover, .navbar-inverse .navbar-nav > .wed > a:focus {
+    color: #101010f5;
+    background-color: #8ad49a;
+}
+
+.navbar-default > li > a:hover, .navbar-default > li > a:focus, .navbar-default li a.wed {
+    color: #ffe109 !important;
+}
+        
+        caption{
+            color:  #009688;
+            font-size: 25px;
+                padding-bottom: 28px;
+                    padding-top: 108px;
+                    text-align: center;
+        }
+        th,td{
+            text-align: center;
+            height: 30%;
+            padding: 19px;
+        }
+        table{
+            text-align: center;
+        }
+        
+     </style>   
+    </head>
+    <body>
+<form method="post" enctype="multipart/form-data">
+
+   <table align="center" border="5">
+         <caption>Women Welfare Societies</caption>
+    <tr>
+        <th>Society Name</th>
+        <th>Manager Name</th>
+         <th>Address</th>
+          <th>District</th>
+   
+         <th>State</th>
+          <th>Pincode</th>
+                <th>Phone</th>
+         
+           <th>Account</th>
+           <th>Bank Details</th>
+           <th>Members</th>
+         
+                
+    </tr>
+    {% for i in data %}
+    <tr>
+          <td>{{i.society}}</td>
+    <td>{{i.manager}}</td>
+     <td>{{i.address}}</td>
+    <td>{{i.district}}</td>
+       <td>{{i.state}}</td>
+
+
+
+<td>{{i.pincode}}</td>
+<td>{{i.phone}}</td>
+  <td>{{i.account}}</td>
+<td>{{i.bank}}</td>
+
+    <td><a href="/user/wedding_member_detail/{{i.pk}}" class="btn btn-primary">View Members</a> </td>
+</tr>
+{% endfor %}
+</table>
+</form>
+<br>
+<center> <a href="/user/wedding/" class="btn btn-primary">Back</a></center>
+
+           <div class="footer">
+	<div class="container">
+		<!-- Social-icons -->
+		
+		<!-- //Social-icons -->
+	
+		<!-- copyright -->
+		<div class="w3agile_footer_copy">
+			<p>Social Welfare. All rights reserved </p>
+		</div>
+		<!-- //copyright -->
+		<!-- newsletter -->
+		
+			<div class="clearfix"> </div>
+			<!-- //newsletter -->
+		</div>
+	</div>
+            
+    </body>
+</html>
+
+{% endblock %}
+

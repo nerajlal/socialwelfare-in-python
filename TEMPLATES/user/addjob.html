@@ -1,0 +1,108 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block content %}
+
+<html>
+<head>
+<title>Purchase Product </title>
+<!-- Custom Theme files -->
+<link href="{% static 'donate/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Flat Registration Form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--Google Fonts-->
+<style>
+    .login input[type="text"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    
+    }
+     .login input[type="email"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    
+    }
+    
+    .login input[type="date"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }  
+    .login select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }
+   .nav 
+{
+    font-family: 'Dosis', sans-serif;
+    }
+                                     
+.col-md-4 {
+    width: 32.333333%;
+}
+        .navbar-inverse .navbar-nav > .index> a, .navbar-inverse .navbar-nav > .pur > a:hover, .navbar-inverse .navbar-nav > .pur > a:focus {
+    color: #101010f5;
+    background-color: #8ad49a;
+    
+}
+.navbar-default > li > a:hover, .navbar-default > li > a:focus, .navbar-default li a.pur{
+    color: #ffe109 !important;
+} 
+#h1{
+    padding-top: 77px;
+}
+.nav{
+    padding-left: 32px;
+}
+    
+</style>
+</head>
+<body>
+	<h1 id='h1'>Enter Details</h1>
+<div class="login">
+		<h2>Job</h2>
+                <div class="lock"> <img src="{% static 'donate/images/lock.png' %}" alt="" title=""/> </div>
+		
+		<span class="line"> </span>
+                <form action="/user/addjob" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+
+                   <input type="text" placeholder="Job Title" name="job" required=""/> 
+
+                   <input type="text" placeholder="Job Description" name="description" required=""/>
+
+                   <input type="text" placeholder="Full Name" name="name" required=""/>
+                
+                    
+                    <input type="text" placeholder=" Company Address" name="address" required=""/>
+                    <input type="text" placeholder="District" name="district" required=""/>
+		 
+                    <input type="text" placeholder="State" name="state" required=""/>
+                 
+                    <input type="text"   pattern="^\d{10}$" name="phone" required maxlength="10" placeholder="Phone Number" >
+                    
+               <!--     <input type="text" placeholder="Phone Number" name="phone" required=""/>-->
+                  
+                 
+                    <br>
+                    <br>
+                    <center>
+                        <input type="submit" name="sub" value="Add"></center>
+              </form>
+</div>	
+</body>
+</html>
+
+
+{% endblock %}

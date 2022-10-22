@@ -1,0 +1,61 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Signin Account Form Responsive Widget Template | Home :: w3layouts</title>
+<script src="{% static 'login/js/jquery-1.11.0.min.js'%}"></script>
+<!-- Custom Theme files -->
+<link href="{% static 'login/css/style.css'%}" rel="stylesheet" type="text/css" media="all"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Signin Account Form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--google fonts-->
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<!--close effect -->
+<script>$(document).ready(function(c) {
+	$('.log-close').on('click', function(c){
+		$('.login-bottom').fadeOut('slow', function(c){
+	  		$('.login-bottom').remove();
+		});
+	});	  
+});
+</script>
+</head>
+<body>
+	<h1>Signin Account Form</h1>
+	<div class="login">
+	 <div class="rib"> </div>
+		<h2>Sign in to your account</h2>
+		<form action="/login/" method="post">
+			{% csrf_token %}
+			<input type="text" value="User email" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User email';}"/>
+			<input type="password" value="Password..." name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email address:';}"/>
+        
+        <div class="remember">
+			<span class="checkbox1">
+				 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Remember me</label>
+			</span>
+
+			<div class="send">
+				<input type="submit" value="Sign In">
+			</div>
+		</form>
+		  <div class="clear"> </div>
+	</div>
+</div>	
+<div class="login-bottom">
+	<span class="log-close"> </span>
+	 <img src="{% static 'login/images/c-tick.png'%}" alt="">
+	 <h3>Great.We have sent you an email.</h3>
+</div>	
+<div class="copy-right">
+	 <p>Signin Account Form. All rights reserved </p>
+</div>
+</body>
+</html>

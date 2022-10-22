@@ -1,0 +1,108 @@
+{%  extends 'orphanage/base.html' %}
+
+{% load static %}
+{% block content %}
+<html>
+<head>
+<title>Add</title>
+<!-- Custom Theme files -->
+<link href="{% static 'orphanage/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Flat Registration Form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--Google Fonts-->
+<style>
+    .login input[type="text"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }
+        .navbar-right {
+    /* padding-right: 30px; */
+    padding-left: 47px;
+}
+  .agileits_w3layouts_banner_nav {
+     
+    margin: -50px auto;
+  }
+  #h1{
+      padding-top: 80px;
+  }
+    .login input[type="radio"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }
+.navbar-default .navbar-nav>.prod>a,
+.navbar-default .navbar-nav>.prod>a:hover,
+.navbar-default .navbar-nav>.prod>a:focus {
+    color: #FFC107;
+    background: none;
+}
+
+.navbar-default .navbar-nav>.prod>a:before {
+    background: #FFC107;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+}
+</style>
+</head>
+
+
+     
+            <h1 id="h1">Update Details</h1>
+<div class="login">
+		
+                <div class="lock"> <img src="{% static 'orphanage/images/lock.png'%}" alt="" title=""/> </div>
+                {% for i in data %}
+		<span class="line"> </span>
+                <form action="/orphanage/edit_product1/{{i.pk}}/" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <!-- Member Id
+                    <input type="text" placeholder="Member Id" name="id" value="">
+                    <br>
+                    <br> -->
+                    Product Name
+                    <input type="text" placeholder="Name" name="pname" value="{{i.pname}}"/>
+                 
+                   
+                    <br>
+                    <br>
+                    Description
+                    <br>
+                    <input type="text" placeholder="Description" name="desc" value="{{i.desc}}"/>
+                    <br>
+                    <br>
+                    Price
+                    <input type="text" placeholder="Price" name="price" value="{{i.price}}"/>
+                                   
+                <br>
+                   <br>
+                   <!-- <input type="file"  name="image"  accept=".jpeg,.jpg,.png" value=" "/> -->
+                   <input type="file" name="image" id="image" /><img src="{{ i.image.url }}" width="150" height="150" ></td>
+
+              
+               
+                <br>
+                
+                <br>
+                <input type="submit" name="submit" value="Update">
+                
+               {% endfor %}
+        </form>
+  
+
+ 
+</div>
+</html>
+{% endblock %}

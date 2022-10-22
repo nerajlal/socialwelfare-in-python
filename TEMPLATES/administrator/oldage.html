@@ -1,0 +1,69 @@
+{% extends 'administrator/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <style>
+        table{
+        width:100%;
+        }
+caption{
+            color:  #009688;
+            font-size: 25px;
+                padding-bottom: 28px;
+                    padding-top:104px;
+                    text-align: center;
+        }
+        td,th{
+            text-align: center;
+            height: 50px;
+        }
+        
+        table{
+            text-align: center;
+        }
+     </style>   
+    </head>
+    <body>
+<form method="post" enctype="multipart/form-data">
+
+   <table align="center" border="5">
+         <caption>Oldage Societies</caption>
+    <tr>
+        <th>Society Name</th>
+        <th>Manager Name</th>
+         <th>Address</th>
+          <th>District</th>
+         <th>State</th>
+          <th>Pincode</th>
+            <th>Phone</th>
+           <th>Account</th>
+           <th>Bank Details</th>
+           <th>Members</th>
+                   
+    </tr>
+    {% for i in data %}
+    <tr>
+         <td>{{i.society}}</td>
+         <td>{{i.manager}}</td>
+         <td>{{i.address}}</td>
+         <td>{{i.district}}</td>
+         <td>{{i.state}}</td>
+         <td>{{i.pincode}}</td>
+         <td>{{i.society}}</td>
+         <td>{{i.phone}}</td>
+         <td>{{i.account}}</td>
+         <td>{{i.bank}}</td>
+         <td><a href="/administrator/view_oldage_members/{{i.pk}}/">View Members</a></td>
+        
+
+    </tr>
+    {% endfor %}
+
+
+
+   </table>
+</form>
+                </body>
+</html>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'women_welfare/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <style>
+        table{
+        width:100%;
+        }
+
+        input[type=button]{
+           display:block;
+	text-align:center;
+        }
+        caption{
+            color:  #009688;
+            font-size: 25px;
+                padding-bottom: 28px;
+                    padding-top: 104px;
+                    text-align: center;
+        }
+        table{
+            text-align: center;
+        }
+        td ,th
+        {
+            width: 20px;
+            height: 30px;
+            text-align: center;
+        }
+        img{
+            height: 80px;
+            width: 80px;
+        }
+         .navbar-default .navbar-nav>.wprod>a,
+.navbar-default .navbar-nav>.wprod>a:hover,
+.navbar-default .navbar-nav>.wprod>a:focus {
+    color: #FFC107;
+    background: none;
+}
+
+.navbar-default .navbar-nav>.wprod>a:before {
+    background: #FFC107;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+}
+        
+        
+     </style>   
+    </head>
+    <body>
+<form method="post" enctype="multipart/form-data">
+
+   <table align="center" border="5">
+         <caption>Product details</caption>
+    <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+         <th>Description</th>
+         <th>Price</th>
+              
+         <th>Image</th>
+         
+           <th>Edit</th>
+           <th>Delete</th>
+                
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{i.pk}}</td>  
+        <td>{{i.pname}}</td>  
+        <td>{{i.desc}}</td>  
+        <td>{{i.price}}</td>  
+         
+
+
+<td><img src="{{i.image.url}}"alt ="" width='60px' height="60px"></td>
+<td><center><a href="/women/edit_products/{{i.pk}}/" class="btn btn-primary">Edit</a> </center></td>
+<td><center><a href="/women/delete_products/{{i.pk}}/" class="btn btn-primary">Delete</a></center></td>
+</tr>
+{% endfor %}
+</table>
+</form>
+        <br>
+        <br>
+    <center>
+        <a href="/women/add_products/{{i.pk}}" class="btn btn-primary">Add Products</a> </center>
+    <br>
+
+    </body>
+</html>
+{% endblock %}

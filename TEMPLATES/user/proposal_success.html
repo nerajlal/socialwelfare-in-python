@@ -1,0 +1,41 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block content %}
+
+<html>
+    <head>
+        <style>
+           #con{
+               padding-top: 165px;
+            }
+            #li{
+                    padding-top: 41px;
+    font-size: 20px;
+    color: darkred;
+            }
+            #h2{
+                color: #4cae4c;
+                text-align: center;
+                    padding-top: 39px;
+            }
+               .navbar-inverse .navbar-nav > .wed > a, .navbar-inverse .navbar-nav > .wed > a:hover, .navbar-inverse .navbar-nav > .wed > a:focus {
+    color: #101010f5;
+    background-color: #8ad49a;
+}
+
+.navbar-default > li > a:hover, .navbar-default > li > a:focus, .navbar-default li a.wed {
+    color: #ffe109 !important;
+}
+        </style>
+    </head>
+    <body>
+        <div id ="con" class="container">
+        <h3 >   You Successfully Send the Proposal.
+            They will contact you soon...
+        </h3>
+            <h2 id="h2">Thank You!!</h2>
+        </div>
+    </body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,136 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block content %}
+
+<html>
+    <head>             
+<title>Products</title>
+<link href="{% static 'donate/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: -1px;
+    padding: 1px;
+    }
+    img{
+        width: 500px;
+            height: 300px;
+    }
+    .navbar-right {
+    /* padding-right: 30px; */
+
+    padding: 1px;
+    margin: -1px;
+}
+element.style {
+    padding-top: 533px;
+}
+.main {
+    background: #fff;
+    margin: 20px 0;
+    padding-top: 168px;
+}
+#w{
+   
+    padding-top: 539px;
+
+        
+}
+.nav 
+{
+    font-family: 'Dosis', sans-serif;
+    }
+                                     
+.col-md-4 {
+    width: 32.333333%;
+}
+        .navbar-inverse .navbar-nav > .index> a, .navbar-inverse .navbar-nav > .index > a:hover, .navbar-inverse .navbar-nav > .pur > a:focus {
+    color: #101010f5;
+    background-color: #8ad49a;
+    
+}
+.navbar-default > li > a:hover, .navbar-default > li > a:focus, .navbar-default li a.pur{
+    color: #ffe109 !important;
+}
+</style>
+</head>
+    
+    
+    <body>
+        
+<div class="main">
+    <div style="width:800px; margin:0 auto;">
+    <a href="/user/purchase/" class="btn btn-primary">Women Welfares</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="" class="btn btn-success">Orphanages</a>
+
+    </div>
+    <br>
+    <br>
+    <br>
+
+	<div class="container">
+               
+		<div class="single-top">
+                 
+                    
+                        <div class="row">
+                {% for i in data %}
+				<div class="col-md-4">
+                                    <img src="{{i.image.url}}" alt ="" width='400px' height='600px'>
+                                    
+                                    <br>
+                                    <br>
+                                    <h4>Product Name: {{i.pname}}</h4>
+                                    <br>
+                                    <h4> Description: {{i.desc}}</h4>
+                                      <br>
+                                    <h4> Price: {{i.price}}</h4>
+                                    <br>
+                                    <a href="/user/purchase_orphanage_buy/{{i.pk}}" class="btn btn-primary">BUY</a> 
+                                    <br>
+                                    <br>
+				</div>
+                {% endfor %}
+ 
+                    
+</div>
+
+                </div>
+                </div>
+            
+        </div>
+    </div>
+        
+                             <div class="footer">
+	<div class="container">
+		<!-- Social-icons -->
+		
+		<!-- //Social-icons -->
+	
+		<!-- copyright -->
+		<div class="w3agile_footer_copy">
+			<p>Social Welfare. All rights reserved </p>
+		</div>
+		<!-- //copyright -->
+		<!-- newsletter -->
+		
+			<div class="clearfix"> </div>
+			<!-- //newsletter -->
+		</div>
+	</div>
+       </body>          
+</html>
+            
+                
+
+          
+
+                 
+                  
+          
+
+                 
+                  
+{% endblock %}

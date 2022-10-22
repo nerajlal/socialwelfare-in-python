@@ -1,0 +1,97 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+<title>Donate </title>
+<!-- Custom Theme files -->
+<link href="{% static 'donate/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Flat Registration Form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--Google Fonts-->
+<style>
+    .login input[type="text"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    
+    }
+     .login input[type="email"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    
+    }
+    
+    .login input[type="date"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }  
+    .login select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }
+    .nav 
+{
+    font-family: 'Dosis', sans-serif;
+    padding-left: 30px;
+    }
+                                     
+.col-md-4 {
+    width: 32.333333%;
+}
+        .navbar-inverse .navbar-nav > .hdon> a, .navbar-inverse .navbar-nav > .hdon > a:hover, .navbar-inverse .navbar-nav > .hdon > a:focus {
+    color: #101010f5;
+    background-color: #8ad49a;
+    
+}
+.navbar-default > li > a:hover, .navbar-default > li > a:focus, .navbar-default li a.hdon{
+    color: #ffe109 !important;
+}
+#h1{
+    padding-top: 50px;
+}
+    
+</style>
+</head>
+<body>
+    <h1 id="h1">Enter details</h1>
+<div class="login">
+		<h2 >Donate Form</h2>
+                <div class="lock"> <img src="templates/oadd/images/lock.png" alt="" title=""/> </div>
+		
+		<span class="line"> </span>
+                <form action="/user/societies_oldage_donate/{{pk}}/" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                   <input type="text" placeholder="Full Name" name="name" required=""/>
+                
+                    
+                    <input type="text" placeholder="Address" name="address" required=""/>
+                    <input type="text" placeholder="district" name="district" required=""/>
+		 
+                    <input type="text" placeholder="State" name="state" required=""/>
+                 <input type="text"   pattern="^\d{10}$" name="phone" required maxlength="10" placeholder="Phone Number" >
+                   <!-- <input type="text" placeholder="Phone Number" name="phone" required=""/>-->
+                   <input type="text" placeholder="Amount" name="amount" required=""/>
+                 
+                    <br>
+                    <br>
+                    <center>
+                        <input type="submit" name="sub" value="Donate"></center>
+              </form>
+</div>	
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'administrator/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        
+<title>Products</title>
+<link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: -1px;
+    padding: 1px;
+    }
+    .single-top{
+            margin-top: -15px;
+    }
+    .navbar-right {
+    /* padding-right: 30px; */
+
+    padding: 1px;
+    margin: -1px;
+}
+element.style {
+    padding-top: 533px;
+}
+.main {
+    background: #fff;
+    margin: 20px 0;
+    padding-top: 168px;
+}
+#w{
+   
+    padding-top: 539px;
+
+    
+    
+}
+img{
+    padding-top: 40px;
+    height: 200px;
+    width: 200px;
+}
+#h3{
+  font-weight: bold;
+}
+</style>
+</head>
+    
+    
+    <body>
+      
+<div class="main">
+  
+	<div class="container">
+            <h3 id="h3"><b>Orphanage Products</b></h3>
+		<div class="single-top">
+                 
+                    {% for i in data %}
+				<div class="col-md-4">
+                                    <img src="{{i.image.url}}" alt ="" height='191px'>
+                                    
+                                    <br>
+                                    <h4>{{i.pname}}</h4>
+                                    <br>
+                                    <h4>{{i.desc}}</h4>
+                                      <br>
+                                    <h4>{{i.price}}</h4>
+						 
+				</div>
+                {% endfor %}
+<h3 id="h3"><b>Women Products</b></h3>
+                    <div class="row">
+                        {% for i in data1 %}
+				<div class="col-md-4">
+                                    <img src="{{i.image.url}}" alt ="" width='191px' height='191px'>
+                                    
+                                    <br>
+                                    <h4>{{i.pname}}</h4>
+                                    <br>
+                                    <h4>{{i.desc}}</h4>
+                                      <br>
+                                    <h4>{{i.price}}</h4>
+						 
+				</div>
+                {% endfor %}
+                    </div>
+    
+                </div>
+        </div>
+</div>
+        
+    </body>
+</html>
+
+{% endblock %}     
+      
+       
+
+
+ 
+	
+    	
+     

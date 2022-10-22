@@ -1,0 +1,89 @@
+{% extends 'women_welfare/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <style>
+        table{
+        width:100%;
+         text-align: center;
+         margin-top: 30px;
+        }
+h3{
+    
+padding-top: 100px;
+text-align: center;
+color:  #009688;
+  }
+h5{
+            padding-top: 30px;
+             color:  #009688;
+        }
+        img{
+            width: 80px;
+            height: 80px;
+        }
+        td,th{
+            text-align: center;
+            height: 50px;
+        }
+ 
+   .navbar-default .navbar-nav>.wdon>a,
+.navbar-default .navbar-nav>.wdon>a:hover,
+.navbar-default .navbar-nav>.wdon>a:focus {
+    color: #FFC107;
+    background: none;
+}.navbar-default .navbar-nav>.wdon>a:focus {
+
+
+.navbar-default .navbar-nav>.wdon>a:before {
+    background: #FFC107;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+}
+
+     </style>   
+    </head>
+    <body>
+         <h3>Donations</h3>
+         <h5>If Received The Donation,Then Verify That By Clicking The Not Recieved Button</h5>
+<form method="post" enctype="multipart/form-data">
+
+   <table align="center" border="5">
+
+    <tr>
+
+        <th>Name</th>
+        <th>Address</th>
+         <th>District</th>
+         <th>State</th>
+         <th>Phone</th>
+         <th>Amount</th>
+        <th>Recieved or Not</th>
+    </tr>
+
+    {% for i in data %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.district}}</td>
+        <td>{{i.state}}</td>
+        <td>{{i.phone}}</td>
+        <td>{{i.amount}}</td>
+        {% if i.receive == "Recieved" %}
+        <td><center><a href="" class="btn btn-primary">Recieved</a> </center></td>
+        {% else %}
+        <td><center><a href="/women/donation_received/{{i.pk}}/" class="btn btn-primary">Not Recieved</a> </center></td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+ </table>
+</form>
+       
+    </body>
+</html>
+
+{% endblock %}

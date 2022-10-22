@@ -1,0 +1,36 @@
+{%  extends 'orphanage/base.html' %}
+
+{% load static %}
+{% block content %}
+
+<html>
+    <head>
+        <style>
+            .navbar-default .navbar-nav>.home>a,
+.navbar-default .navbar-nav>.home>a:hover,
+.navbar-default .navbar-nav>.home>a:focus {
+    color: #FFC107;
+    background: none;
+}
+
+.navbar-default .navbar-nav>.home>a:before {
+    background: #FFC107;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+}
+
+</style>
+    </head>
+    <body>
+        
+	<div class="banner_top">
+            <img src="{% static 'images/orph1.jpg' %}"/>
+	</div>
+        
+    </body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+
+{%  extends 'orphanage/base.html' %}
+
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <style>
+        table{
+        width:100%;
+        }
+caption{
+            
+            color:  #009688;
+            font-size: 25px;
+                padding-bottom: 28px;
+                    padding-top: 104px;
+                    text-align: center;
+        }
+        
+               .navbar-default .navbar-nav>.mview>a,
+.navbar-default .navbar-nav>.mview>a:hover,
+.navbar-default .navbar-nav>.mview>a:focus {
+    color: #FFC107;
+    background: none;
+}
+
+.navbar-default .navbar-nav>.mview>a:before {
+    background: #FFC107;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+}
+td,th{
+        text-align: center;
+    }
+     </style>   
+    </head>
+    <body>
+<form method="post" enctype="multipart/form-data">
+
+   <table align="center" border="5">
+         <caption>Member Details</caption>
+    <tr>
+        <th>Member Id</th>
+        <th>Name</th>
+         <th>Gender</th>
+         <th>Age</th>
+         <th>Talent</th>
+         <th>Disability</th>
+         <th>State</th>
+           <th>Account</th>
+           <th>Bank Details</th>
+           <th>Image</th>
+           <th>Edit</th>
+           <th>Delete</th>
+                
+    </tr>
+	{% for i in data %}
+   <tr>
+	   <td>{{i.pk}}</td>
+	   <td>{{i.name}}</td>
+	   <td>{{i.gender}}</td>
+	   <td>{{i.age}}</td>
+	   <td>{{i.talent}}</td>
+	   <td>{{i.disability}}</td>
+	   <td>{{i.state}}</td>
+	   <td>{{i.account}}</td>
+	   <td>{{i.bank}}</td>
+	   <td><img src="{{i.image.url}}" width="50" height="50"></td>
+	   <td><a class="btn btn-primary" href="/orphanage/edit_member/{{i.pk}}">Edit</a></td>
+          <td><a class="btn btn-danger" href="/orphanage/delete_member/{{i.pk}}">Delete</a></td>
+   </tr>
+   {% endfor %}
+          
+
+</table>
+</form>
+        <br>
+		<center> <a class="btn btn-primary" href="/orphanage/add_members/">ADD MEMBERS</a> </center>
+    </body>
+</html>
+{% endblock %}

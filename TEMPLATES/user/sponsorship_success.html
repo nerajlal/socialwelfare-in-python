@@ -1,0 +1,48 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <style>
+           #con{
+               padding-top: 165px;
+            }
+            #li{
+                    padding-top: 41px;
+    font-size: 20px;
+    color: darkred;
+            }
+            #h2{
+                color: #4cae4c;
+                text-align: center;
+                    padding-top: 39px;
+            }
+                .navbar-inverse .navbar-nav > .spon > a, .navbar-inverse .navbar-nav > .spon > a:hover, .navbar-inverse .navbar-nav > .spon > a:focus {
+    color: #101010f5;
+    background-color: #8ad49a;
+}
+.navbar-default > li > a:hover, .navbar-default > li > a:focus, .navbar-default li a.spon {
+    color: #ffe109 !important;
+}
+        </style>
+    </head>
+    <body>
+        <div id ="con" class="container">
+        <h3 >   You Successfully Send An Sponsorship request .
+            They will contact you soon.Please keep the documents mentioned below..</h3>
+        <ul id="li">  
+            <li>Designation Proof</li>
+
+            <li>Financial Certificate</li>
+
+        
+
+            <li>Id Proof</li>
+
+            <li>You must need to transfer a fixed amount for the Child.Keep that details also.</li>
+        </ul>
+            <h2 id="h2">Thank You!!</h2>
+        </div>
+    </body>
+</html>
+{% endblock %}

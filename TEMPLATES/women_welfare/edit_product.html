@@ -1,0 +1,109 @@
+{% extends 'women_welfare/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+<title>Edit Products</title>
+<!-- Custom Theme files -->
+<link href="{% static 'donate/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Flat Registration Form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--Google Fonts-->
+<style>
+    .login input[type="text"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }
+    .login input[type="radio"] {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #180b0b99;
+    }
+     .navbar-right {
+    /* padding-right: 30px; */
+    padding-left: 37px;
+    }
+       .navbar-right {
+    /* padding-right: 30px; */
+    padding-left: 47px;
+}
+  .agileits_w3layouts_banner_nav {
+     
+    margin: -50px auto;
+  }
+  #h1{
+      padding-top: 80px;
+  }
+   .navbar-default .navbar-nav>.wprod>a,
+.navbar-default .navbar-nav>.wprod>a:hover,
+.navbar-default .navbar-nav>.wprod>a:focus {
+    color: #FFC107;
+    background: none;
+}
+
+.navbar-default .navbar-nav>.wprod>a:before {
+    background: #FFC107;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+}
+    
+</style>
+</head>
+
+
+     
+            <h1 id="h1">Update Details</h1>
+<div class="login">
+		
+                <div class="lock"> <img src="{% static 'images/lock.png' %}" alt="" title=""/> </div>
+		
+		<span class="line"> </span>
+                <form action="/women/edit_products/{{pk}}/" method="post" enctype="multipart/form-data">
+                   {% csrf_token %}
+                    
+                    Product Name
+                    <input type="text" placeholder="Name" name="name" value="{{data.pname}}"/>
+                 
+                   
+                    <br>
+                    <br>
+                    Description
+                    <br>
+                    <input type="text" placeholder="Description" name="desc" value="{{data.desc}}"/>
+                    <br>
+                    <br>
+                    Price
+                    <input type="text" placeholder="Price" name="price" value="{{data.price}}"/>
+                    
+                   
+              
+               
+                <br>
+                   <br>
+                   <input type="file"  name="image"  accept=".jpeg,.jpg,.png" value="{{data.image.url}}"/>
+              
+               
+                <br>
+                
+                <br>
+                <center>
+                    <input type="submit" name="submit" value="Update"></center>
+               
+        </form>
+  
+
+
+</div>
+</html>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'oldage/base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .navbar-default .navbar-nav>.ohome>a,
+.navbar-default .navbar-nav>.ohome>a:hover,
+.navbar-default .navbar-nav>.ohome>a:focus {
+    color: #FFC107;
+    background: none;
+}
+
+.navbar-default .navbar-nav>.ohome>a:before {
+    background: #FFC107;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+}
+        
+    </style>
+    
+<div class="banner_top">
+            <img src="{% static 'images/o12.jpg'%}">
+	</div>
+
+
+{% endblock %}

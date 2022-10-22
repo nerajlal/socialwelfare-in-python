@@ -1,0 +1,71 @@
+{% extends 'administrator/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <style>
+            table{
+                width: 80%;
+            } 
+caption{
+    text-align: center;
+            color:  #009688;
+            font-size: 25px;
+                padding-bottom: 28px;
+                    padding-top: 104px;
+        }
+        th,td{
+            text-align: center;
+            height: 40px;
+        }
+        img{
+            height: 50px;
+            width: 50px;
+        }
+        
+        table{
+            text-align: center;
+        }
+     </style>   
+    </head>
+    <body>
+<form method="post" enctype="multipart/form-data">
+
+   <table align="center" border="5">
+         <caption>Member Details</caption>
+    <tr>
+
+        <th>Name</th>
+               <th>DOB</th>    
+                   <th>Occupation</th>      
+         <th>Address</th>
+         <th>City</th>
+         <th>State</th>
+                <th>Phone</th>
+                <th>Image</th>
+       <th>To</th>
+        <th>Society Name</th>
+    </tr>
+
+    {% for i in data %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.dob}}</td>
+        <td>{{i.occupation}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.district}}</td>
+        <td>{{i.state}}</td>
+        <td>{{i.phone}}</td>
+        <td><img src="{{i.image.url}}"></td>
+        <td>{{i.women}}</td>
+        <td>{{i.welfare}}</td>
+
+       
+    </tr>
+    {% endfor %}
+   </table>
+</form>
+
+</body>
+</html>
+{% endblock %}
